@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Protect /manage and its sub-routes
   if (pathname.startsWith("/manage")) {
     const authCookie = request.cookies.get("admin_auth");
     if (authCookie?.value !== "authenticated") {
@@ -16,7 +15,3 @@ export function middleware(request: NextRequest) {
 
   return NextResponse.next();
 }
-
-export const config = {
-  matcher: ["/manage/:path*"],
-};
