@@ -64,11 +64,12 @@ export async function uploadMedia(formData: FormData): Promise<UploadResult[]> {
           type: isVideo ? "video" : "image",
           name: file.name,
         };
-      } catch {
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
         return {
           success: false,
           name: file.name,
-          error: "Upload failed. Please try again.",
+          error: `Upload failed: ${msg}`,
         };
       }
     })
