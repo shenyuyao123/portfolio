@@ -17,7 +17,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] as const }}
         >
           <span className="text-sm font-semibold text-[var(--brand-magenta)] uppercase tracking-widest mb-3 block">
             Connect

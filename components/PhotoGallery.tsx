@@ -24,7 +24,7 @@ function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
-        transition={{ duration: 0.25, ease: [0.25, 1, 0.5, 1] }}
+        transition={{ duration: 0.25, ease: [0.25, 1, 0.5, 1] as const }}
         onClick={(e) => e.stopPropagation()}
       />
       <button
@@ -61,7 +61,7 @@ export default function PhotoGallery({ items }: { items: MediaItem[] }) {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 1, 0.5, 1] }}
+            transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 1, 0.5, 1] as const }}
             onClick={() => setLightboxSrc(item.url)}
           >
             <img

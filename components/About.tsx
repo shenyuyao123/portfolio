@@ -20,7 +20,7 @@ const stagger = {
 
 const itemAnim = {
   hidden: { opacity: 0, y: 20, scale: 0.95 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, ease: [0.25, 1, 0.5, 1] } },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, ease: [0.25, 1, 0.5, 1] as const } },
 };
 
 export default function About() {
@@ -31,7 +31,7 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] as const }}
         >
           <span className="text-sm font-semibold text-[var(--brand-magenta)] uppercase tracking-widest mb-3 block">
             About
@@ -50,7 +50,7 @@ export default function About() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 1, 0.5, 1] }}
+            transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 1, 0.5, 1] as const }}
           >
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
               I&apos;m a multidisciplinary creative with a passion for blending design and technology.

@@ -17,7 +17,7 @@ export default function Timeline() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] as const }}
         >
           <span className="text-sm font-semibold text-[var(--brand-magenta)] uppercase tracking-widest mb-3 block">
             Journey
@@ -46,7 +46,7 @@ export default function Timeline() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.5, delay: i * 0.1, ease: [0.25, 1, 0.5, 1] }}
+                  transition={{ duration: 0.5, delay: i * 0.1, ease: [0.25, 1, 0.5, 1] as const }}
                 >
                   {/* Dot */}
                   <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-[var(--brand-magenta)] rounded-full -translate-x-1/2 shadow-md z-10 ring-4 ring-[var(--surface-secondary)]" />
